@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||archiveofourown.org^", "resourceTypes": ["main_frame"] } },
+  { "id": 2,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||fanfiction.net^",     "resourceTypes": ["main_frame"] } },
+  { "id": 3,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||wattpad.com^",        "resourceTypes": ["main_frame"] } },
+  { "id": 4,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||literotica.com^",     "resourceTypes": ["main_frame"] } },
+  { "id": 5,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||indiansexstories2.net^", "resourceTypes": ["main_frame"] } },
+  { "id": 6,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||asstr.org^",          "resourceTypes": ["main_frame"] } },
+  { "id": 7,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||literotica.org^",     "resourceTypes": ["main_frame"] } },
+  { "id": 8,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||nifty.org^",          "resourceTypes": ["main_frame"] } },
+  { "id": 9,  "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||storiesonline.net^",  "resourceTypes": ["main_frame"] } },
+  { "id": 10, "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||lushstories.com^",    "resourceTypes": ["main_frame"] } },
+  { "id": 11, "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||quotev.com^",         "resourceTypes": ["main_frame"] } },
+  { "id": 12, "priority": 1, "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } }, "condition": { "urlFilter": "||deviantart.com^",     "resourceTypes": ["main_frame"] } }
+]

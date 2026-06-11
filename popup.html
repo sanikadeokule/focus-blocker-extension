@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="title">🛡️ Focus Blocker</div>
+    <label class="switch">
+      <input type="checkbox" id="toggle" checked />
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="stat-card">
+    <div class="stat-row">
+      <div>
+        <div class="stat-num" id="count">0</div>
+        <div class="stat-label">blocks this week</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div>
+        <div class="stat-num orange" id="streakDays">0</div>
+        <div class="stat-label">day streak 🔥</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="block">Block</button>
+    <button class="tab" data-tab="schedule">Schedule</button>
+    <button class="tab" data-tab="keywords">Keywords</button>
+    <button class="tab" data-tab="stats">Stats</button>
+  </div>
+
+  <!-- Block tab -->
+  <div id="tab-block" class="tab-panel">
+    <div class="block">
+      <label>Add a site to block</label>
+      <div class="row">
+        <input type="text" id="newSite" placeholder="example.com" />
+        <button id="addBtn" class="primary">Add</button>
+      </div>
+    </div>
+    <div class="block">
+      <label>Custom blocked sites</label>
+      <ul id="customList" class="list">
+        <li class="empty">No custom sites yet.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <label>Whitelist — never block</label>
+      <div class="row">
+        <input type="text" id="newWhitelist" placeholder="example.com" />
+        <button id="addWhitelistBtn" class="primary">Add</button>
+      </div>
+      <ul id="whitelistList" class="list">
+        <li class="empty">No exceptions yet.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <label>Custom block-page message</label>
+      <textarea id="customMessage" placeholder="A message to your future self..." rows="2"></textarea>
+      <button id="saveMsg" class="ghost">Save message</button>
+    </div>
+  </div>
+
+  <!-- Schedule tab -->
+  <div id="tab-schedule" class="tab-panel hidden">
+    <div class="block">
+      <label>Schedule mode</label>
+      <div class="row-space">
+        <span class="hint">Block only during these hours</span>
+        <label class="switch sm">
+          <input type="checkbox" id="scheduleEnabled" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="block" id="scheduleFields">
+      <label>Block from</label>
+      <div class="row time-row">
+        <input type="time" id="scheduleStart" value="09:00" />
+        <span class="to">to</span>
+        <input type="time" id="scheduleEnd" value="21:00" />
+      </div>
+      <p class="hint mt">Outside these hours all sites unblock automatically.</p>
+    </div>
+    <button id="saveSchedule" class="primary full">Save schedule</button>
+  </div>
+
+  <!-- Keywords tab -->
+  <div id="tab-keywords" class="tab-panel hidden">
+    <div class="block">
+      <label>Auto keyword detection</label>
+      <div class="row-space">
+        <span class="hint">Block pages with adult-content keywords in URL or title</span>
+        <label class="switch sm">
+          <input type="checkbox" id="keywordBlockingEnabled" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="block">
+      <label>Block pages by keyword</label>
+      <p class="hint mb">Checks the URL and page title — catches what URL blocking misses.</p>
+      <div class="row">
+        <input type="text" id="newKeyword" placeholder="e.g. fanfic, wattpad, romance" />
+        <button id="addKwBtn" class="primary">Add</button>
+      </div>
+    </div>
+    <div class="block">
+      <label>Active keywords</label>
+      <ul id="keywordList" class="list">
+        <li class="empty">No keywords yet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Stats tab -->
+  <div id="tab-stats" class="tab-panel hidden">
+    <div class="block">
+      <label>Current streak</label>
+      <div class="streak-card">
+        <div class="streak-big" id="streakBig">0</div>
+        <div class="streak-sub">days without disabling 🔥</div>
+        <div class="streak-since" id="streakSince"></div>
+      </div>
+    </div>
+    <div class="block">
+      <label>Backup your blocklist</label>
+      <div class="row">
+        <button id="exportBtn" class="ghost full">⬇ Export</button>
+        <button id="importBtn" class="ghost full">⬆ Import</button>
+      </div>
+      <input type="file" id="importFile" accept=".json" style="display:none" />
+    </div>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <!-- Friction lock modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Wait. Are you sure?</h3>
+      <p>To turn off the blocker, type this sentence <em>exactly</em>:</p>
+      <p class="phrase">I am choosing to disable my focus blocker.</p>
+      <input type="text" id="confirmInput" placeholder="Type it here..." />
+      <div class="modal-actions">
+        <button id="cancelBtn" class="ghost">Cancel</button>
+        <button id="confirmBtn" class="primary" disabled>Disable</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
