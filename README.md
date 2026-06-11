@@ -2,6 +2,14 @@
 
 A Chrome extension that blocks distracting websites so you can stay focused. Built with Manifest V3 — no external services, no accounts, runs entirely in your browser.
 
+## Motivation
+
+The primary goal of this extension is blocking **erotic literature** — sites like AO3, FanFiction.net, Wattpad, Literotica, and similar platforms. The built-in static blocklist and keyword system are specifically tuned for this use case.
+
+There is also a best-effort attempt at blocking **visual erotic content** (image/video sites) via the bulk domain ruleset and keyword detection, though this is harder to cover comprehensively given how many sites exist.
+
+If you're building something similar, the keyword blocking tab is the most flexible tool — add terms that appear in URLs or page titles of the specific content you want to avoid.
+
 ---
 
 ## Features
